@@ -1,3 +1,45 @@
 ﻿@{
     ViewData["Title"] = "Login";
 }
+
+<div class="container my-5">
+    <div class="row g-0 shadow-lg rounded">
+        <!-- Painel Esquerdo -->
+        <div class="col-lg-5 text-white text-center p-4 d-flex flex-column justify-content-center" style="background-color: #4A7F4F;">
+            <div class="d-flex justify-content-center">
+                <img src="~/vendor/icons/IconeComFundo.svg" alt="logo" width="100" class="mb-4">
+            </div>
+            <h1>Bem-Vindo!</h1>
+            <p>Deseja voltar para a página inicial?</p>
+            <a asp-controller="Home" asp-action="Index" class="text-white btn btn-warning mb-3 align-content-center">Home</a>
+            <p>Não possui conta? Faça seu cadastro</p>
+            <a asp-controller="Login" asp-action="Cadastro" class="text-white btn btn-warning mb-3 align-content-center">Cadastro</a>
+        </div>
+
+        <!-- Painel Direito -->
+        <div class="col-lg-7 bg-light p-5 d-flex flex-column justify-content-center">
+            <h3 class="text-center mb-4">Cadastro</h3>
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Nome</label>
+                    <input type="text" class="form-control" placeholder="Nome: Ex: Lucas Pereira" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="E-mail: Ex: email@gmail.com" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Senha</label>
+                    <input type="password" class="form-control" placeholder="Senha: Ex: ********" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">CNPJ</label>
+                    <input type="text" class="form-control" placeholder="CNPJ:" required>
+                </div>
+            </form>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-warning text-white ">Entrar</button>
+            </div>
+        </div>
+    </div>
+</div>
