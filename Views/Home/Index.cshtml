@@ -29,14 +29,16 @@
 <div class="row">
     @foreach (var prod in Model)
     {
-        <div class="col-md-4">
+        <div class="col-md-4 mt-4">
             <form asp-action="Delete" asp-controller="Product" method="post">
                 <input type="hidden" asp-for="@prod.ID_Residuo" name="id" />
                 <div class="card">
                     <img src="@Url.Content("~/vendor/imgs/" + prod.ImgUrl)" class="card-img-top fixed-image-height" alt="@prod.Nome" />
                     <div class="card-body">
-                        <h5 class="card-title">@prod.Nome</h5>
-                        <p class="card-text">@prod.Quantidade toneladas</p>
+                        <h5 class="card-title">Material: @prod.Nome</h5>
+                        <p class="card-text">Empresa: @prod.Usuario.RazaoSocial</p>
+                        <p class="card-text">@prod.Quantidade (Kg)</p>
+                        <p class="card-text">@prod.Localizacao.Estado @prod.Localizacao.Cidade</p>
                         @if (prod.Transacao != null)
                         {
                             <span>R$ @prod.Transacao.Preco_Final</span>

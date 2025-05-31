@@ -31,11 +31,15 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active text-white" asp-area="" asp-controller="CadastroProduto"
-                               asp-action="Index">Venda seu produto</a>
+                               asp-action="Create">Venda seu produto</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active text-white" asp-area="" asp-controller="Home"
                                asp-action="SobreNos">Sobre Nós</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" asp-area="" asp-controller="Login"
+                               asp-action="Index">Lista de usuários</a>
                         </li>
                     </ul>
                 </div>
@@ -75,7 +79,9 @@
         </nav>
     </header>
     -->
-
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
 
     <div class="container">
         <main role="main" class="pb-3">

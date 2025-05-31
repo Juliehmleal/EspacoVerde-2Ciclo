@@ -1,0 +1,75 @@
+﻿@model EspacoVerde.Models.Residuo
+
+@{
+    ViewData["Title"] = "Espaço Verde";
+}
+
+<h1 class="text-black text-center m-4">Cadastro de Resíduos</h1>
+<div class="container row align-items-center">
+    <div class="col-1 col-sm-2">
+
+    </div>
+    <div class="col-10 col-sm-8">
+        <form asp-action="Create" method="post" class="form shadow p-4 rounded">
+            <input asp-for="ID_Usuario" value="1" hidden/>
+            <label class="form-label" asp-for="ImageFile">Imagem do resíduo <i class="bi bi-file-earmark-image"></i></label>
+            <input class="form-control form-select" type="file" placeholder="Selecione uma imagem" asp-for="ImageFile">
+
+            <input asp-for="ImgUrl" value="Bearing-bronze.jpg" hidden />
+
+            <label class="form-label mt-2" asp-for="Localizacao.Cidade"></label>
+            <select asp-for="ID_Localizacao" class="form-control form-select" asp-items="ViewBag.ID_Localizacao">
+                <option value="">Selecione a cidade</option>
+            </select>
+            <span asp-validation-for="ID_Localizacao" class="text-danger"></span>
+            
+            <label class="form-label mt-2">Tipo Material</label>
+            <select class="form-control form-select" placeholder="Selecione" asp-for="Nome">
+                <option value="">Selecione</option>
+                <option value="aco_inox">Aço Inox</option>
+                <option value="ferro_fundido">Ferro Fundido</option>
+                <option value="aluminio">Alumínio</option>
+                <option value="cobre">Cobre</option>
+                <option value="latao">Latão</option>
+                <option value="zinco">Zinco</option>
+                <option value="chumbo">Chumbo</option>
+                <option value="estanho">Estanho</option>
+                <option value="niquel">Níquel</option>
+                <option value="titanio">Titânio</option>
+                <option value="bronze">Bronze</option>
+                <option value="aco_carbono">Aço Carbono</option>
+                <option value="magnesio">Magnésio</option>
+                <option value="cromo">Cromo</option>
+                <option value="manganes">Manganês</option>
+                <option value="tungstenio">Tungstênio</option>
+                <option value="molibdenio">Molibdênio</option>
+                <option value="vanadio">Vanádio</option>
+            </select>
+
+            <label class="form-label mt-2" asp-for="Quantidade"> Quantidade (Kg)</label>
+            <input class="form-control" type="number" placeholder="100,05" asp-for="Quantidade">
+            
+            <label class="form-label mt-2" asp-for="PrecoKg"></label>
+            <input class="form-control" type="number" placeholder="20" asp-for="PrecoKg"/>
+            
+            <div class="row">
+                <div class="col-6 pe-1">
+                    <button type="submit" class="btn btn-success w-100 mt-2">Registrar</button>
+                </div>
+                <div class="col-6 ps-1">
+                    <button type="reset" class="btn btn-secondary w-100 mt-2 text-white">Cancelar</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div class="col-1 col-sm-2">
+
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

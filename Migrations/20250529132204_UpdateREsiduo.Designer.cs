@@ -4,6 +4,7 @@ using EspacoVerde.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EspacoVerde.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250529132204_UpdateREsiduo")]
+    partial class UpdateREsiduo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -178,6 +181,16 @@ namespace EspacoVerde.Migrations
                         },
                         new
                         {
+                            ID_Residuo = 8,
+                            ID_Localizacao = 4,
+                            ID_Usuario = 1,
+                            ImgUrl = "estanho.webp",
+                            Nome = "Estanho",
+                            PrecoKg = 9.50m,
+                            Quantidade = 15m
+                        },
+                        new
+                        {
                             ID_Residuo = 9,
                             ID_Localizacao = 1,
                             ID_Usuario = 1,
@@ -245,6 +258,16 @@ namespace EspacoVerde.Migrations
                             Nome = "Manganês",
                             PrecoKg = 1.50m,
                             Quantidade = 20m
+                        },
+                        new
+                        {
+                            ID_Residuo = 16,
+                            ID_Localizacao = 4,
+                            ID_Usuario = 1,
+                            ImgUrl = "tungstenio.webp",
+                            Nome = "Tungstênio",
+                            PrecoKg = 30.00m,
+                            Quantidade = 3m
                         },
                         new
                         {
@@ -321,7 +344,7 @@ namespace EspacoVerde.Migrations
                         new
                         {
                             ID_Transacao = 1,
-                            Data_Transacao = new DateTime(2025, 5, 31, 11, 38, 9, 787, DateTimeKind.Local).AddTicks(8559),
+                            Data_Transacao = new DateTime(2025, 5, 29, 10, 22, 3, 861, DateTimeKind.Local).AddTicks(359),
                             ID_Comprador = 2,
                             ID_Residuo = 1,
                             Preco_Final = 550m

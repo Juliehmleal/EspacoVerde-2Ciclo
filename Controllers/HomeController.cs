@@ -24,6 +24,7 @@ public class HomeController : Controller
         var residuos = _context.Residuos
             .Include(r => r.Usuario)
             .Include(r => r.Transacao)
+            .Include(r => r.Localizacao)
             .ToList();
 
         return View(residuos);

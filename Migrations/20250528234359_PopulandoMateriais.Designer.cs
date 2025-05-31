@@ -4,6 +4,7 @@ using EspacoVerde.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EspacoVerde.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250528234359_PopulandoMateriais")]
+    partial class PopulandoMateriais
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -91,9 +94,6 @@ namespace EspacoVerde.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("PrecoKg")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<decimal>("Quantidade")
                         .HasColumnType("decimal(18,2)");
 
@@ -113,7 +113,6 @@ namespace EspacoVerde.Migrations
                             ID_Usuario = 1,
                             ImgUrl = "aco_inox.webp",
                             Nome = "Aço Inox",
-                            PrecoKg = 5.50m,
                             Quantidade = 100m
                         },
                         new
@@ -123,7 +122,6 @@ namespace EspacoVerde.Migrations
                             ID_Usuario = 1,
                             ImgUrl = "ferro_fundido.webp",
                             Nome = "Ferro Fundido",
-                            PrecoKg = 1.20m,
                             Quantidade = 50m
                         },
                         new
@@ -133,7 +131,6 @@ namespace EspacoVerde.Migrations
                             ID_Usuario = 1,
                             ImgUrl = "aluminio.webp",
                             Nome = "Alumínio",
-                            PrecoKg = 3.80m,
                             Quantidade = 75m
                         },
                         new
@@ -143,7 +140,6 @@ namespace EspacoVerde.Migrations
                             ID_Usuario = 1,
                             ImgUrl = "cobre.webp",
                             Nome = "Cobre",
-                            PrecoKg = 8.20m,
                             Quantidade = 30m
                         },
                         new
@@ -153,7 +149,6 @@ namespace EspacoVerde.Migrations
                             ID_Usuario = 1,
                             ImgUrl = "latao.webp",
                             Nome = "Latão",
-                            PrecoKg = 4.50m,
                             Quantidade = 60m
                         },
                         new
@@ -163,7 +158,6 @@ namespace EspacoVerde.Migrations
                             ID_Usuario = 1,
                             ImgUrl = "zinco.webp",
                             Nome = "Zinco",
-                            PrecoKg = 2.10m,
                             Quantidade = 40m
                         },
                         new
@@ -173,8 +167,16 @@ namespace EspacoVerde.Migrations
                             ID_Usuario = 1,
                             ImgUrl = "chumbo.webp",
                             Nome = "Chumbo",
-                            PrecoKg = 1.80m,
                             Quantidade = 25m
+                        },
+                        new
+                        {
+                            ID_Residuo = 8,
+                            ID_Localizacao = 4,
+                            ID_Usuario = 1,
+                            ImgUrl = "estanho.webp",
+                            Nome = "Estanho",
+                            Quantidade = 15m
                         },
                         new
                         {
@@ -183,7 +185,6 @@ namespace EspacoVerde.Migrations
                             ID_Usuario = 1,
                             ImgUrl = "niquel.webp",
                             Nome = "Níquel",
-                            PrecoKg = 12.00m,
                             Quantidade = 10m
                         },
                         new
@@ -193,7 +194,6 @@ namespace EspacoVerde.Migrations
                             ID_Usuario = 1,
                             ImgUrl = "titanio.webp",
                             Nome = "Titânio",
-                            PrecoKg = 25.00m,
                             Quantidade = 5m
                         },
                         new
@@ -203,7 +203,6 @@ namespace EspacoVerde.Migrations
                             ID_Usuario = 1,
                             ImgUrl = "bronze.webp",
                             Nome = "Bronze",
-                            PrecoKg = 6.80m,
                             Quantidade = 12m
                         },
                         new
@@ -213,7 +212,6 @@ namespace EspacoVerde.Migrations
                             ID_Usuario = 1,
                             ImgUrl = "aco_carbono.webp",
                             Nome = "Aço Carbono",
-                            PrecoKg = 0.90m,
                             Quantidade = 22m
                         },
                         new
@@ -223,7 +221,6 @@ namespace EspacoVerde.Migrations
                             ID_Usuario = 1,
                             ImgUrl = "magnesio.webp",
                             Nome = "Magnésio",
-                            PrecoKg = 4.20m,
                             Quantidade = 18m
                         },
                         new
@@ -233,7 +230,6 @@ namespace EspacoVerde.Migrations
                             ID_Usuario = 1,
                             ImgUrl = "cromo.webp",
                             Nome = "Cromo",
-                            PrecoKg = 7.10m,
                             Quantidade = 16m
                         },
                         new
@@ -243,8 +239,16 @@ namespace EspacoVerde.Migrations
                             ID_Usuario = 1,
                             ImgUrl = "manganes.webp",
                             Nome = "Manganês",
-                            PrecoKg = 1.50m,
                             Quantidade = 20m
+                        },
+                        new
+                        {
+                            ID_Residuo = 16,
+                            ID_Localizacao = 4,
+                            ID_Usuario = 1,
+                            ImgUrl = "tungstenio.webp",
+                            Nome = "Tungstênio",
+                            Quantidade = 3m
                         },
                         new
                         {
@@ -253,7 +257,6 @@ namespace EspacoVerde.Migrations
                             ID_Usuario = 1,
                             ImgUrl = "molibdenio.webp",
                             Nome = "Molibdênio",
-                            PrecoKg = 28.00m,
                             Quantidade = 2m
                         },
                         new
@@ -263,7 +266,6 @@ namespace EspacoVerde.Migrations
                             ID_Usuario = 1,
                             ImgUrl = "vanadio.webp",
                             Nome = "Vanádio",
-                            PrecoKg = 15.50m,
                             Quantidade = 7m
                         },
                         new
@@ -273,7 +275,6 @@ namespace EspacoVerde.Migrations
                             ID_Usuario = 1,
                             ImgUrl = "aco_inox.webp",
                             Nome = "Aço Inox",
-                            PrecoKg = 5.70m,
                             Quantidade = 15m
                         },
                         new
@@ -283,7 +284,6 @@ namespace EspacoVerde.Migrations
                             ID_Usuario = 1,
                             ImgUrl = "aluminio.webp",
                             Nome = "Alumínio",
-                            PrecoKg = 4.00m,
                             Quantidade = 50m
                         });
                 });
@@ -321,10 +321,10 @@ namespace EspacoVerde.Migrations
                         new
                         {
                             ID_Transacao = 1,
-                            Data_Transacao = new DateTime(2025, 5, 31, 11, 38, 9, 787, DateTimeKind.Local).AddTicks(8559),
+                            Data_Transacao = new DateTime(2025, 5, 28, 20, 43, 59, 97, DateTimeKind.Local).AddTicks(6089),
                             ID_Comprador = 2,
                             ID_Residuo = 1,
-                            Preco_Final = 550m
+                            Preco_Final = 1500m
                         });
                 });
 
