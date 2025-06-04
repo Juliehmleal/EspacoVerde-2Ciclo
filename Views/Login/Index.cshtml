@@ -6,30 +6,37 @@
 
 <h1>Usuarios Cadastrados</h1>
 
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th>Id</th>
-			<th>Nome</th>
-			<th>Email</th>
-			<th>Editar</th>
-			<th>Excluir</th>
-		</tr>
-	</thead>
-	<tbody>
-		@foreach (var usuario in Model)
-		{
-			<tr>
-				<td>@usuario.RazaoSocial</td>
-				<td>@usuario.CNPJ</td>
-				<td>@usuario.Email</td>
-				<td>
-					<a class="btn btn-primary" asp-action="Edit" asp-route-id="@usuario.ID_Usuario">Editar</a>
-				</td>
-				<td>
-					<a class="btn btn-danger" asp-action="Delete" asp-route-id="@usuario.ID_Usuario">Excluir</a>
-				</td>
-			</tr>
-		}
-	</tbody>
-<</table>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Nome</th>
+						<th>Email</th>
+						<th>Editar</th>
+						<th>Excluir</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var usuario in Model)
+					{
+						<tr>
+							<td>@usuario.RazaoSocial</td>
+							<td>@usuario.CNPJ</td>
+							<td>@usuario.Email</td>
+							<td>
+								<a class="btn btn-primary" asp-action="Edit" asp-route-id="@usuario.ID_Usuario">Editar</a>
+							</td>
+							<td>
+								<a class="btn btn-danger" asp-action="Delete" asp-route-id="@usuario.ID_Usuario">Excluir</a>
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
