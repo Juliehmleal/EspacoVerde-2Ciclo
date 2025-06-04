@@ -4,6 +4,7 @@ using EspacoVerde.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EspacoVerde.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250531192856_Ana")]
+    partial class Ana
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -321,7 +324,7 @@ namespace EspacoVerde.Migrations
                         new
                         {
                             ID_Transacao = 1,
-                            Data_Transacao = new DateTime(2025, 5, 31, 16, 47, 18, 142, DateTimeKind.Local).AddTicks(147),
+                            Data_Transacao = new DateTime(2025, 5, 31, 16, 28, 56, 15, DateTimeKind.Local).AddTicks(4399),
                             ID_Comprador = 2,
                             ID_Residuo = 1,
                             Preco_Final = 550m
